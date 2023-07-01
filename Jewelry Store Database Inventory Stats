@@ -1,0 +1,30 @@
+# SQL
+/***Inventory:
+Anklet (25,10,30,5,10), Necklace (15,5,20,5,15), Studs (28,10,30,12,6), Small Hoops (12,5,15,10,8), Large Hoops (8,4,16,4,10), Rope Bracelet (30,10,30,0,7), Chain Bracelet (16,4,20,6,10),
+Dangles (3,3,10,7,18), Rings (41,20,60,23,12), Arm Cuffs (3,5,10,3,17), Toe Rings (9,2,10,1,6),Wrist Cuffs (6,5,12,6,14), Thigh Chains (5,10,15,3,13), Waist Chains (5,2,7,4,18), Stackable Rings (50,25,60,15,4)***/
+
+CREATE TABLE inventory (id INTEGER PRIMARY KEY, name TEXT, quantity_available INTEGER, reorder_point INTEGER, maximum_on_hand INTEGER,total_sold_monthly INTEGER, price INTEGER);  
+
+INSERT INTO inventory VALUES
+(1,'Anklet',25,10,30,5,10),
+(2,'Necklace',15,5,20,5,15),
+(3,'Studs',28,10,30,12,6),
+(4,'Small Hoops',12,5,15,10,8),
+(5,'Large Hoops',8,4,16,4,10),
+(6,'Rope Bracelet',30,10,30,0,7),
+(7,'Chain Bracelet',16,4,20,6,10),
+(8,'Dangles',3,3,10,7,18),
+(9,'Rings',41,20,60,23,12),
+(10,'Arm Cuffs',3,5,10,3,17),
+(11,'Toe Rings',9,2,10,1,6),
+(12,'Wrist Cuffs',6,5,12,6,14),
+(13,'Thigh Chains',5,10,15,3,13),
+(14,'Waist Chains',5,2,7,4,18),
+(15,'Stackable Rings',50,25,60,15,4);
+
+SELECT * FROM inventory ORDER BY price;
+
+SELECT SUM(quantity_available) FROM inventory;
+
+SELECT * FROM inventory WHERE reorder_point>quantity_available
+
